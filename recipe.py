@@ -29,6 +29,7 @@ class _GenericCSVMutator:
             return None
         elif line == self.skip_rows:
             # header
+            self.header = row.copy()
             self.header_index = row.index(self.match_column)
             if self.gid_column in row:
                 raise GenericCSVException("{} column already exists in input data".format(self.gid_column))

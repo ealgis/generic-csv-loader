@@ -1,13 +1,9 @@
-# EAlGIS - Australian Greens Cluster Data
+# EAlGIS - Generic CSV loader
 
-Data maintainer: Colin Jacobs
-
-## Importing the census
+## Importing the data
 
 Run:
 
     docker-compose run dataloader /bin/bash
-    ./load.sh
+    ./load.sh </path/to/config.json>
 
-If you have not already downloaded the census, it will be downloaded and
-extracted.
