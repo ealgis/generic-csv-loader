@@ -90,7 +90,19 @@ class GenericCSVLoader:
                     geo_access,
                     shape_table, geo_source.gid_column,
                     target_table, _GenericCSVMutator.gid_column)
-
+                loader.set_table_metadata(
+                    target_table,
+                    {
+                        "type": self.config['description'],
+                        "kind": self.config['family'],
+                        "family": self.config['family'],
+                    })
+                loader.register_columns(
+                    target_table,
+                    ((column_name, {
+                        "type": column_name,
+                        "kind": "Value"
+                    }) for column_name in mutator.header))
             return loader.result()
 
     def build_geo_gid_mapping(self):
@@ -112,12 +124,10 @@ class GenericCSVLoader:
 
 
 def main():
-
     for arg in sys.argv[1:]:
         loader = GenericCSVLoader(sys.argv[1])
         result = loader.run()
-        # result.dump(tmpdir)
-
+        result.dump(tmpdir)
 
 
 if __name__ == '__main__':
