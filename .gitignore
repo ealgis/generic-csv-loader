@@ -8,4 +8,6 @@ __pycache__
 .vscode/
 data/
 tmp/
-config/
+*.dump
+*.code-workspace
+*.xls
