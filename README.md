@@ -27,6 +27,13 @@ config/
 
 Should you then ever need to create the schema from scratch, it's then just a matter of running `load.sh` against each of the JSON files in turn.
 
+## 0. Prerequisites
+
+-   [Docker Desktop](https://www.docker.com/products/docker-desktop)
+-   [Docker Compose](https://docs.docker.com/compose/install/)
+-   [PostgreSQL's Command-line tools](https://www.ibm.com/cloud/blog/new-builders/postgresql-tips-installing-the-postgresql-client)
+-   [An EALGIS install](https://github.com/ealgis/ealgis/)
+
 ## 1. Initialise the database
 
 But before you start any of that you need to initialise the standalone database that this CSV loader will use to temporarily store your data. Simply run:
