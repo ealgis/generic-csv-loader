@@ -65,15 +65,21 @@ You can now exit and shutdown the datastore Docker container (`docker-compose st
 
 ## 2. Load the relevant geographic areas
 
-Next up you'll need to load in the spatial data that will provide the link between your CSV and seeing your data on the map.
+Next up you'll need to load in the spatial data that will provide the link between your CSV and seeing your data on a map.
 
 This will be the same data that you've already got loaded in your EALGIS install, but for the purposes of this loader we also need a copy in the loader's database. (For Census data, it's found in schemas like `aus_census_2016_shapes`.)
 
-If you're working with Census data, you can simply download the relevant `ASGS Geometry` PostgreSQL dump files linked to from our [postgresql_dumps](https://github.com/ealgis/postgresql_dumps) repo.
+### Getting spatial data
 
-If you're working with Australian Electorates data, check out our [Australian Electorates](https://github.com/ealgis/australian-electorates) repo.
+If you're working with data using ABS geographic areas or electoral boundaries, then you can simply download the relevant PostgreSQL dump files from our [postgresql_dumps](https://github.com/ealgis/postgresql_dumps) repo.
+
+**Tip:** If you'd like to run the data loaders yourself the postgresql_dumps repo has links to our collection of data loaders.
+
+#### Your own custom data
 
 If you're working with your own custom data, then you'll need to use `pg_dump` to dump out your spatial data schema.
+
+### Loading spatial data
 
 Wherever you got your data from, drop the `.dump` somewhere in this repo and run:
 
