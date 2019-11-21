@@ -238,12 +238,12 @@ And you're done!
 
 # Maintenance
 
-## Updating ealgis-ingest-base
+## Updating docker-ingest-base
 
-If we release a new version of the `ealgis-ingest-base` Docker image used for `dataloader`, execute these commands to pull in a new version.
+If we release a new version of the `ealgis/ingest-base` Docker image used for `dataloader`, execute these commands to pull in a new version.
 
 ```
 docker-compose rm dataloader
-docker image rm ealgis/ealgis-ingest-base:latest
+docker image rm ealgis/ingest-base:latest
 docker-compose pull dataloader
 ```
